@@ -12,11 +12,13 @@
 #include <random>
 #include "laba1.cpp"
 #include "laba2.cpp"
+#include "laba3.cpp"
 
 using namespace std;
 
 const bool ExecuteLaba1 = false;
-const bool ExecuteLaba2 = true;
+const bool ExecuteLaba2 = false;
+const bool ExecuteLaba3 = true;
 
 int main() {
     if (ExecuteLaba1 == true) {
@@ -40,5 +42,9 @@ int main() {
 
     if (ExecuteLaba2 == true) {
         auto m = IntoDiagonal();
+    }
+
+    if (ExecuteLaba3 == true) {
+        SolveByYacob();
     }
 }

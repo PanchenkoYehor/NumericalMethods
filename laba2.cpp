@@ -1,11 +1,21 @@
 #include <vector>
 using namespace std;
 
-const vector < vector < double > > A = {{30.1, -1.4, 10, -1.5},
-                                        {-17.5, 11.1, 1.3, -7.5},
-                                        {1.7, -21.1, 7.1, -17.1},
-                                        {2.1, 2.1, 3.5, 3.3}};
-const vector < double > B = {10, 1.3, 10, 1.7};
+//const vector < vector < double > > A = {{30.1, -1.4, 10, -1.5},
+//                                        {-17.5, 11.1, 1.3, -7.5},
+//                                        {1.7, -21.1, 7.1, -17.1},
+//                                        {2.1, 2.1, 3.5, 3.3}};
+//const vector < double > B = {10, 1.3, 10, 1.7};
+
+namespace Laba2 {
+
+    const vector<vector<double> > A = {{1.3, -1.7, 3.3,  1.7},
+                                       {10,  5.5,  -1.3, 3.4},
+                                       {1.1, 1.8,  -2.2, -1.1},
+                                       {1.3, -1.2, 2.1,  2.2}};
+    const vector<double> B = {1.1, 1.3, 10, 1.8};
+
+}
 
 vector < double > Multy(vector < vector < double > > a, vector < double > x) {
     vector < double > res(x.size(), 0);
@@ -25,7 +35,7 @@ vector < double > Substract(vector < double > a, vector < double > b) {
     return a;
 }
 
-pair < vector < vector < double > >, vector < double > > IntoDiagonal(vector < vector < double > > a = A, vector < double > b = B) {
+pair < vector < vector < double > >, vector < double > > IntoDiagonal(vector < vector < double > > a = Laba2::A, vector < double > b = Laba2::B) {
 
     auto old_a = a;
     auto old_b = b;
