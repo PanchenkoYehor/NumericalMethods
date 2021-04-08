@@ -60,10 +60,13 @@ void SolveByYacob() {
         }
         B_it[i] /= Laba3::A[i][i];
     }
-    printf("Matrix:\n");
+    printf("\nMatrix B:\n");
     PrintMat(A_it);
-    printf("Column:\n");
-    PrintRow(B_it);
+    printf("\nColumn c:\n");
+    for (int i = 0; i < B_it.size(); i++) {
+        printf("c[%d] = %10.5lf\n", i, B_it[i]);
+        //PrintRow(B_it);
+    }
 
     vector < vector < double > > x(0);
     bool need_random = true;
@@ -96,6 +99,24 @@ void SolveByYacob() {
             break;
         }
     }
-    printf("Solution:\n");
-    PrintRow(x.back());
+
+    for (int t = 0; t + 1 < x.size(); t++) {
+        printf("%d-th approximation:\n", t);
+        for (int i = 0; i < x[t].size(); i++) {
+            printf("\tx[%d] = %10.5lf\n", i, x[t][i]);
+        }
+    }
+
+    printf("\nSolution:\n");
+    for (int i = 0; i < x.back().size(); i++) {
+        printf("x[%d] = %10.5lf\n", i, x.back()[i]);
+        //PrintRow(x.back());
+    }
+
+    auto diff = Substract(Laba3::B, Multy(Laba3::A, x.back()));
+
+    printf("\ndiff is:\n");
+    for (auto j : diff) {
+        printf("%10.5lf\n", j);
+    }
 }
