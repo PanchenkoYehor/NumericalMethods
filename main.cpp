@@ -13,12 +13,14 @@
 #include "laba1.cpp"
 #include "laba2.cpp"
 #include "laba3.cpp"
+#include "laba4.cpp"
 
 using namespace std;
 
 const bool ExecuteLaba1 = false;
 const bool ExecuteLaba2 = false;
-const bool ExecuteLaba3 = true;
+const bool ExecuteLaba3 = false;
+const bool ExecuteLaba4 = true;
 
 int main() {
     if (ExecuteLaba1 == true) {
@@ -46,5 +48,10 @@ int main() {
 
     if (ExecuteLaba3 == true) {
         SolveByYacob();
+    }
+
+    if (ExecuteLaba4 == true) {
+        SolveBySimpleIterationMethod();
+        SolveByNewtonMethod();
     }
 }
