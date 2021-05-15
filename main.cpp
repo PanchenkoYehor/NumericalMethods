@@ -14,13 +14,15 @@
 #include "laba2.cpp"
 #include "laba3.cpp"
 #include "laba4.cpp"
+#include "laba5.cpp"
 
 using namespace std;
 
 const bool ExecuteLaba1 = false;
 const bool ExecuteLaba2 = false;
 const bool ExecuteLaba3 = false;
-const bool ExecuteLaba4 = true;
+const bool ExecuteLaba4 = false;
+const bool ExecuteLaba5 = true;
 
 int main() {
     if (ExecuteLaba1 == true) {
@@ -53,5 +55,11 @@ int main() {
     if (ExecuteLaba4 == true) {
         SolveBySimpleIterationMethod();
         SolveByNewtonMethod();
+    }
+
+    if (ExecuteLaba5 == true) {
+        PolLangrange();
+        PolNewtonFirst();
+        PolNewtonSecond();
     }
 }

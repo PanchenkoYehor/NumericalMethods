@@ -16,13 +16,15 @@ using namespace Laba3;
 
 bool DiagonalDominant(vector< vector < double > > A) {
     for (int i = 0; i < A.size(); i++) {
+        double sum = 0;
         for (int j = 0; j < A.size(); j++) {
             if (i == j) {
                 continue;
             }
-            if (A[i][j] >= A[i][i]) {
-                return false;
-            }
+            sum += A[i][j];
+        }
+        if (sum >= A[i][i]) {
+            return false;
         }
     }
 
@@ -48,6 +50,7 @@ void PrintRow(vector < double > B) {
 void SolveByYacob() {
     bool dom = DiagonalDominant(Laba3::A);
     printf("Diagonal dominant: %s\n", dom ? "true" : "false");
+    //Ax = B
     auto A_it = Laba3::A;
     auto B_it = Laba3::B;
     for (int i = 0; i < A_it.size(); i++) {
@@ -67,6 +70,7 @@ void SolveByYacob() {
         printf("c[%d] = %10.5lf\n", i, B_it[i]);
         //PrintRow(B_it);
     }
+    //x = Bx + c
 
     vector < vector < double > > x(0);
     bool need_random = true;
@@ -82,6 +86,7 @@ void SolveByYacob() {
     }
 
     for (;;) {
+        //x_(k+1) = B * x_k + c
         auto x_it = Multy(A_it, x.back());
         for (int i = 0; i < x_it.size(); i++) {
             x_it[i] += B_it[i];
